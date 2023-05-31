@@ -7,7 +7,7 @@
  * @returns {boolean}
  */
 
-export const isEqual = (firstObject, secondObject) => {
+const isEqual = (firstObject, secondObject) => {
     throw new Error(`Напишите здесь свое решение ${firstObject} ${secondObject}`);
 };
 
