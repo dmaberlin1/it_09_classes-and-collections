@@ -8,7 +8,22 @@
  */
 
 const isEqual = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject} ${secondObject}`);
+    // Проверяем каждый ключ в первом объекте
+    for (let key in firstObject) {
+        // Если значение текущего ключа в первом объекте отличается от значения во втором объекте, возвращаем false
+        if (firstObject[key] !== secondObject[key]) {
+            return false;
+        }
+    }
+    // Проверяем каждый ключ во втором объекте
+    for (let key in secondObject) {
+        // Если значение текущего ключа во втором объекте отличается от значения в первом объекте, возвращаем false
+        if (firstObject[key] !== secondObject[key]) {
+            return false;
+        }
+    }
+        // Если значения всех ключей совпадают, возвращаем true
+    return true;
 };
 
 const data = {a: 1, b: 1};

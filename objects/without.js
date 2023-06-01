@@ -7,8 +7,16 @@
  * @returns {Object} - новый объект без удаленных значений
  */
 
-export const without = (object, ...args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${args}`);
+const without = (object, ...args) => {
+    // Преобразуем объект в массив пар ключ-значение
+    const entries = Object.entries(object);
+    console.log(entries)
+
+    // Фильтруем массив пар ключ-значение на основе наличия ключа в списке args
+    const filteredEntries = entries.filter(([key, value]) => !args.includes(key));
+
+    // Преобразуем отфильтрованный массив пар ключ-значение обратно в объект
+    return Object.fromEntries(filteredEntries);
 };
 
 const data = {a: 1, b: 2, c: 3};
